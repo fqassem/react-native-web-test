@@ -1,22 +1,48 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-import Netflix from './components/NetflixGrid/rn';
+import GridList from './components/GridList/rn';
+import tilesData from './components/GridList/tileData';
+import GridTile from './components/GridList/rn/GridListTile';
+
 
 class App extends React.Component {
   render() {
     return (
-      <View style={styles.box}>
+      <View style={styles.root}>
         <Text style={styles.text}>Hello, world!</Text>
-        <Netflix />
+        <GridList className={styles.gridList} cols={2.5}>
+          {tilesData.map((tile) => (
+            <GridTile
+              key={tile.img}
+              title={tile.title}
+              titleStyle={styles.titleStyle}
+              titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+            >
+              <Image
+                style={{ width: 300, height: 300 }}
+                source={{ uri: tile.img }}
+              />
+            </GridTile>
+          ))}
+        </GridList>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  box: { padding: 10 },
-  text: { fontWeight: 'bold' }
+  text: { fontWeight: 'bold' },
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+  },
+  gridList: {
+    flexWrap: 'nowrap',
+  },
 });
 
 export default App;
