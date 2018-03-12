@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     flexShrink: 0
   },
   tile: {
+    padding: 10,
     position: 'relative',
     display: (Platform.OS === 'web') ? 'block' : 'flex',
     height: '100%',

@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import GridList from './components/GridList/rn';
 import tilesData from './components/GridList/tileData';
 import GridTile from './components/GridList/rn/GridListTile';
-
+import GridListTileBar from './components/GridList/rn/GridListTileBar';
 
 class App extends React.Component {
   render() {
@@ -23,6 +23,13 @@ class App extends React.Component {
                 style={{ width: 300, height: 300 }}
                 source={{ uri: tile.img }}
               />
+              <GridListTileBar
+              title={tile.title}
+  
+              actionIcon={
+               "*"
+              }
+            />
             </GridTile>
           ))}
         </GridList>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   root: {
@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     background: 'rgba(0, 0, 0, 0.4)',
     display: 'flex',
     alignItems: 'center',
-    fontFamily: theme.typography.fontFamily
   },
   titlePositionBottom: {
     bottom: 0
@@ -25,9 +24,6 @@ export const styles = StyleSheet.create({
   },
   titleWrap: {
     flexGrow: 1,
-    marginLeft: theme.mixins.gutters().paddingLeft,
-    marginRight: theme.mixins.gutters().paddingRight,
-    color: theme.palette.common.white,
     overflow: 'hidden'
   },
   titleWrapActionPosLeft: {
@@ -37,14 +33,12 @@ export const styles = StyleSheet.create({
     marginRight: 0
   },
   title: {
-    fontSize: theme.typography.pxToRem(16),
     lineHeight: '24px',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap'
   },
   subtitle: {
-    fontSize: theme.typography.pxToRem(12),
     lineHeight: 1,
     textOverflow: 'ellipsis',
     overflow: 'hidden',
@@ -68,16 +62,9 @@ const GridListTileBar = (props) => {
   return (
     <View style={[styles.root, styles.titlePositionBottom, styles.rootSubtitle]}>
       <View style={[styles.titleWrap, styles.titleWrapActionPosLeft]}>
-        <View style={styles.title}>{title}</View>
-        {subtitle ? <View style={styles.subtitle}>{subtitle}</View> : null}
+        <View style={styles.title}><Text>Hello This is a test</Text></View>
+        {subtitle && <View style={styles.subtitle}><Text>THis is still a test</Text></View>}
       </View>
-      {actionIcon ? (
-        <View
-          style={styles.actionIcon}
-        >
-          {actionIcon}
-        </View>
-      ) : null}
     </View>
   );
 };
