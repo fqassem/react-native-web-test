@@ -62,9 +62,15 @@ const GridListTileBar = (props) => {
   return (
     <View style={[styles.root, styles.titlePositionBottom, styles.rootSubtitle]}>
       <View style={[styles.titleWrap, styles.titleWrapActionPosLeft]}>
-        <View style={styles.title}><Text>Hello This is a test</Text></View>
-        {subtitle && <View style={styles.subtitle}><Text>THis is still a test</Text></View>}
+        <View style={styles.title}><Text>{title}</Text></View>
       </View>
+      {actionIcon ? (
+        <View
+          style={styles.actionIcon}
+        >
+          <Text>*</Text>
+        </View>
+      ) : null}
     </View>
   );
 };

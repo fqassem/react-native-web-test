@@ -5,13 +5,12 @@ import PropTypes from 'prop-types';
 const styles = StyleSheet.create({
   root: {
     boxSizing: 'border-box',
-    flexShrink: 0
+    flexShrink: 0,
+    padding: 10
   },
   tile: {
-    padding: 10,
     position: 'relative',
-    display: (Platform.OS === 'web') ? 'block' : 'flex',
-    height: '100%',
+    display: 'flex',
     overflow: 'hidden'
   }
 });

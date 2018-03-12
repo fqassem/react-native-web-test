@@ -9,6 +9,7 @@ const tileData = [
   {
     img: 'https://material-ui-next.com/static/images/grid-list/burgers.jpg',
     title: 'Tasty burger',
+    subtitle: 'very tasty',
     author: 'director90'
   },
   {
