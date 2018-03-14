@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     height: 48,
     background: 'rgba(0, 0, 0, 0.4)',
     display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
   },
   titlePositionBottom: {
@@ -24,10 +25,9 @@ export const styles = StyleSheet.create({
   },
   titleWrap: {
     flexGrow: 1,
+    marginLeft: 20,
+    marginRight: 20,
     overflow: 'hidden'
-  },
-  titleWrapActionPosLeft: {
-    marginLeft: 0
   },
   titleWrapActionPosRight: {
     marginRight: 0
@@ -39,7 +39,6 @@ export const styles = StyleSheet.create({
     whiteSpace: 'nowrap'
   },
   subtitle: {
-    lineHeight: 1,
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap'
@@ -61,8 +60,9 @@ const GridListTileBar = (props) => {
 
   return (
     <View style={[styles.root, styles.titlePositionBottom, styles.rootSubtitle]}>
-      <View style={[styles.titleWrap, styles.titleWrapActionPosLeft]}>
+      <View style={[styles.titleWrap, styles.titleWrapActionPosRight]}>
         <View style={styles.title}><Text>{title}</Text></View>
+        { subtitle ? <View style={styles.subtitle}><Text>{subtitle}</Text></View> : null }
       </View>
       {actionIcon ? (
         <View
