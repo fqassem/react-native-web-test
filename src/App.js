@@ -1,6 +1,9 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
+import IconButton from 'material-ui/IconButton';
+import StarBorderIcon from 'material-ui-icons/StarBorder';
+
 import GridList from './components/GridList/rn';
 import tilesData from './components/GridList/tileData';
 import GridTile from './components/GridList/rn/GridListTile';
@@ -28,7 +31,9 @@ class App extends React.Component {
               title={tile.title}
   
               actionIcon={
-               "*"
+                <IconButton>
+                  <StarBorderIcon style={{color: 'white'}} />
+                </IconButton>
               }
             />
             </GridTile>

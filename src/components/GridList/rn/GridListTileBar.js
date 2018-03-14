@@ -25,15 +25,16 @@ export const styles = StyleSheet.create({
   },
   titleWrap: {
     flexGrow: 1,
-    marginLeft: 20,
-    marginRight: 20,
+    marginLeft: 20, //theme
+    marginRight: 20, // theme 
+    color: 'white', //theme
     overflow: 'hidden'
   },
   titleWrapActionPosRight: {
     marginRight: 0
   },
   title: {
-    lineHeight: '24px',
+    lineHeight: 24,
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap'
@@ -68,7 +69,7 @@ const GridListTileBar = (props) => {
         <View
           style={styles.actionIcon}
         >
-          <Text>*</Text>
+          {actionIcon}
         </View>
       ) : null}
     </View>
