@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Text, View, StyleSheet } from 'react-native';
 
+import withTheme from '../../../style/withTheme';
+
 export const styles = StyleSheet.create({
   root: {
     position: 'absolute',
@@ -61,7 +63,7 @@ const GridListTileBar = (props) => {
 
   return (
     <View style={[styles.root, styles.titlePositionBottom, styles.rootSubtitle]}>
-      <View style={[styles.titleWrap, styles.titleWrapActionPosRight]}>
+      <View style={[styles.titleWrap, styles.titleWrapActionPosRight, {color: props.theme.fontColor}]}>
         <View style={styles.title}><Text>{title}</Text></View>
         { subtitle ? <View style={styles.subtitle}><Text>{subtitle}</Text></View> : null }
       </View>
@@ -105,4 +107,4 @@ GridListTileBar.defaultProps = {
   titlePosition: 'bottom'
 };
 
-export default GridListTileBar;
+export default withTheme(GridListTileBar);
