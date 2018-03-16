@@ -23,6 +23,7 @@ class App extends React.Component {
               key={tile.img}
               title={tile.title}
               subtitle={tile.subtitle}
+              //override styles here
             >
               <Image
                 style={{ width: 300, height: 300 }} //TODO this needs to be more dynamic

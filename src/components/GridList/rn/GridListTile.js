@@ -86,7 +86,6 @@ class GridListTile extends React.Component {
                 }
               });
             }
-
             return child;
           })}
         </View>

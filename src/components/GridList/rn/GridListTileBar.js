@@ -4,6 +4,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 import withTheme from '../../../style/withTheme';
 
+// Default Styles - can be overridden in the component by passing in props
 export const styles = StyleSheet.create({
   root: {
     position: 'absolute',
@@ -26,9 +27,9 @@ export const styles = StyleSheet.create({
   },
   titleWrap: {
     flexGrow: 1,
-    marginLeft: 20, //theme
-    marginRight: 20, // theme 
-    color: 'white', //theme
+    marginLeft: 20, 
+    marginRight: 20,
+    color: 'white', 
     overflow: 'hidden'
   },
   titleWrapActionPosRight: {
@@ -58,18 +59,21 @@ const GridListTileBar = (props) => {
     subtitle,
     title,
     titlePosition,
-    rootStyle
+    rootStyle,
+    titleStyle,
+    subtitleStyle,
+    iconStyle
   } = props;
 
   return (
     <View style={[rootStyle, styles.root, styles.titlePositionBottom, styles.rootSubtitle]}>
-      <View style={[styles.titleWrap, styles.titleWrapActionPosRight, {color: props.theme.fontColor}]}>
-        <View style={styles.title}><Text>{title}</Text></View>
-        { subtitle ? <View style={styles.subtitle}><Text>{subtitle}</Text></View> : null }
+      <View style={[ styles.titleWrap, styles.titleWrapActionPosRight, {color: props.theme.fontColor}]}>
+        <View style={[titleStyle, styles.title]}><Text>{title}</Text></View>
+        { subtitle ? <View style={[subtitleStyle, styles.subtitle]}><Text>{subtitle}</Text></View> : null }
       </View>
       {actionIcon ? (
         <View
-          style={styles.actionIcon}
+          style={[iconStyle, styles.actionIcon]}
         >
           {actionIcon}
         </View>
