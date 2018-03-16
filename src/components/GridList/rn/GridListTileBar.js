@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { Text, View, StyleSheet } from 'react-native';
 
 import withTheme from '../../../style/withTheme';
@@ -58,11 +57,12 @@ const GridListTileBar = (props) => {
     actionPosition,
     subtitle,
     title,
-    titlePosition
+    titlePosition,
+    rootStyle
   } = props;
 
   return (
-    <View style={[styles.root, styles.titlePositionBottom, styles.rootSubtitle]}>
+    <View style={[rootStyle, styles.root, styles.titlePositionBottom, styles.rootSubtitle]}>
       <View style={[styles.titleWrap, styles.titleWrapActionPosRight, {color: props.theme.fontColor}]}>
         <View style={styles.title}><Text>{title}</Text></View>
         { subtitle ? <View style={styles.subtitle}><Text>{subtitle}</Text></View> : null }

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
@@ -22,8 +23,6 @@ class App extends React.Component {
               key={tile.img}
               title={tile.title}
               subtitle={tile.subtitle}
-              titleStyle={styles.titleStyle}
-              titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)" //TODO this doesn't work on native
             >
               <Image
                 style={{ width: 300, height: 300 }} //TODO this needs to be more dynamic
@@ -31,10 +30,11 @@ class App extends React.Component {
               />
               <GridListTileBar
                 title={tile.title}
+                rootStyle={styles.titleBar}
   
                 actionIcon={
                   <IconButton>
-                    <StarBorderIcon style={{color: 'white'}} />
+                    <StarBorderIcon style={{ color: 'white' }} />
                   </IconButton>
                 }
             />
@@ -63,6 +63,9 @@ const styles = StyleSheet.create({
   gridList: {
     flexWrap: 'nowrap',
   },
+  titleBar: {
+    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+  }
 });
 
 export default App;
