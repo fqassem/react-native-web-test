@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'nowrap',
     overflowY: 'auto',
-    padding: 0
+    padding: 0,
+    width: '100%'
   }
 });
 
